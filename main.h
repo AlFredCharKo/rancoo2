@@ -23,6 +23,7 @@
 #include "coords_helper.h"
 #include "read_oldcoo.h"
 #include "substitute.h"
+#include "append_filename.h"
 #include "write_pdb.h"
 
 

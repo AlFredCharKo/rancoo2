@@ -35,11 +35,15 @@ int main(int argc, const char * argv[]) {
 //        printf("\n***   main: write_coo failed! Will exit!");
 //        exit(EXIT_FAILURE);
 //    }
-
-    if (write_pdb(pars->outfile, subcoo) == EXIT_FAILURE) {
-        printf("\n***   main: write_coo failed! Will exit!");
-        exit(EXIT_FAILURE);
-    }
+    
+    char *filename = append_filename(pars->outfile, ".sub", ".pdb");
+    write_pdb(filename, subcoo);
+    free(filename);
+    
+//    if (write_pdb(pars->outfile, subcoo) == EXIT_FAILURE) {
+//        printf("\n***   main: write_coo failed! Will exit!");
+//        exit(EXIT_FAILURE);
+//    }
     
     
     printf("\n");

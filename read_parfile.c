@@ -34,8 +34,8 @@ parameters* read_parfile(char* parfile)
             trim(buffer);
             pars->outfile = (char *)calloc(strlen(buffer)+1, sizeof(char));
             strcpy(pars->outfile, buffer);
-        } else if (line == 3) sscanf(buffer, "%2s %d %lf %d", pars->dopesymb, &(pars->atnofdop), &(pars->dopc), &(pars->atn2sub));
-          else if (line == 4) sscanf(buffer, "%2s %d %d", pars->ch2atnesymb, &(pars->ch2atn), &(pars->chatn));
+        } else if (line == 3) sscanf(buffer, "%2s %d %d", pars->ch2atnesymb, &(pars->ch2atn), &(pars->chatn));
+          else if (line == 4) sscanf(buffer, "%2s %d %lf %d", pars->dopesymb, &(pars->atnofdop), &(pars->dopc), &(pars->atn2sub));
     }
     fclose(FP);
     free(buffer);
