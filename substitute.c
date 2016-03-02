@@ -10,7 +10,7 @@
 
 
 coords* substitute(parameters *pars, coords *coo) {
-    int i=0, count1=0, count2=0;
+    int count1=0, count2=0;
     long int m = 0;
     double frac = -1.0;
     FILE *FP;
@@ -28,21 +28,21 @@ coords* substitute(parameters *pars, coords *coo) {
     fprintf(FP,"\nnat = %6d", subcoo->nat);
     fprintf(FP,"\ncount1 = %d", count1);
     
-    count1 = 0;
-//do mov2 loop
-    for (i=0; i<coo->nat; i++) {
-        if (subcoo->at[i]->atn == pars->chatn) {
-            subcoo->at[i]->atn = pars->ch2atn;
-            strcpy(subcoo->at[i]->esymb, pars->ch2atnesymb);
-            count1++;
-        }
-    }
-    printf("\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
-    fprintf(FP, "\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
+//    count1 = 0;
+//        //do mov2 loop
+//    for (i=0; i<coo->nat; i++) {
+//        if (subcoo->at[i]->atn == pars->chatn) {
+//            subcoo->at[i]->atn = pars->ch2atn;
+//            strcpy(subcoo->at[i]->esymb, pars->ch2atnesymb);
+//            count1++;
+//        }
+//    }
+//    printf("\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
+//    fprintf(FP, "\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
     
 //do random substitution loop
     count2 = 0;
-    frac = (double)count2/(double)count1;
+    frac = 0.0;
     while (frac < pars->dopc) {
         m = rand_at(r, (long int)subcoo->nat);
         if (m >= subcoo->nat) {
@@ -53,7 +53,7 @@ coords* substitute(parameters *pars, coords *coo) {
             strcpy(subcoo->at[m]->esymb, pars->dopesymb);
             count2++;
         }
-        frac = (double)count2/(double)count1;
+        frac = (double)count2/(double)subcoo->nat;
         fprintf(FP,"\nm = %6ld\tatn = %2d\tcount2 = %6d\tfrac = %9.6f\n",m, coo->at[m]->atn, count2, frac);
     }
     printf("\nnumber of atoms substituted %d corresponds to a fraction of %9.6f", count2, frac);

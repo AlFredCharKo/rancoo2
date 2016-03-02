@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     
     print_pars(pars);
     
-    coords *coo = read_oldcoo(pars->infile);
+    coords *coo = read_newcoo(pars->infile);
     if (coo == NULL) {
         printf("\n***   main: read_oldcoo failed! Will exit!");
         exit(EXIT_FAILURE);

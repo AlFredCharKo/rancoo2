@@ -26,7 +26,7 @@ coords* read_oldcoo(char *filename) {
     while (fgets(buffer, MAX_LEN, FP) != NULL) {
         i++;
     }
-    
+    printf("\n***   read_oldcoo: i = %d",i);
     coords *coo = init_coords(i, boxL);
     if (coo == NULL) {
         printf("\n***   read_oldcoo: coo could be initialized");

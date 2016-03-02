@@ -22,6 +22,7 @@
 #include "print_pars.h"
 #include "coords_helper.h"
 #include "read_oldcoo.h"
+#include "read_newcoo.h"
 #include "substitute.h"
 #include "append_filename.h"
 #include "write_pdb.h"
