@@ -54,10 +54,10 @@ coords* substitute(parameters *pars, coords *coo) {
             count2++;
         }
         frac = (double)count2/(double)subcoo->nat;
-        fprintf(FP,"\nm = %6ld\tatn = %2d\tcount2 = %6d\tfrac = %9.6f\n",m, coo->at[m]->atn, count2, frac);
+        fprintf(FP,"\nm = %6ld\tatn = %2d\tcount2 = %6d\tfrac = %9.6f",m, coo->at[m]->atn, count2, frac);
     }
     printf("\nnumber of atoms substituted %d corresponds to a fraction of %9.6f", count2, frac);
-    fprintf(FP,"number of atoms substituted %d corresponds to a fraction of %9.6f", count2, frac);
+    fprintf(FP,"\n\nnumber of atoms substituted %d corresponds to a fraction of %9.6f", count2, frac);
     fclose(FP);
     gsl_rng_free(r);
     return subcoo;

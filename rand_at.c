@@ -23,7 +23,7 @@ gsl_rng* init_rand_at(void) {
     gsl_rng_set(r, s);
     printf ("\nseed = time = %lu", s);
     printf ("\ngenerator type: %s", gsl_rng_name (r));
-//    printf ("\nseed = %lu", gsl_rng_default_seed);
+        //    printf ("\nseed = %lu", gsl_rng_default_seed);
     printf("\nmin value = %lu", gsl_rng_min(r));
     printf("\nmax value = %lu", gsl_rng_max(r));
     

@@ -33,7 +33,7 @@ coords* read_newcoo(char *filename) {
         printf("\n***   read_newcoo: file format to read is incompatible (not new-coo)");
         return NULL;
     }
-    coords *coo = init_coords(i, boxL);
+    coords *coo = init_coords(nat, boxL);
     printf("\n*** read_newcoo: header = %7s %6d %10.6f %10.4f %10.4f",fileformat, nat, boxL.x, boxL.y, boxL.z);
 
     for(i=0;i<coo->nat;i++) {
