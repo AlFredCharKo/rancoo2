@@ -28,17 +28,6 @@ coords* substitute(parameters *pars, coords *coo) {
     fprintf(FP,"\nnat = %6d", subcoo->nat);
     fprintf(FP,"\ncount1 = %d", count1);
     
-//    count1 = 0;
-//        //do mov2 loop
-//    for (i=0; i<coo->nat; i++) {
-//        if (subcoo->at[i]->atn == pars->chatn) {
-//            subcoo->at[i]->atn = pars->ch2atn;
-//            strcpy(subcoo->at[i]->esymb, pars->ch2atnesymb);
-//            count1++;
-//        }
-//    }
-//    printf("\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
-//    fprintf(FP, "\nswitched %6d atoms of type %2d to type %2d\n", count2, pars->chatn, pars->ch2atn);
     
 //do random substitution loop
     count2 = 0;

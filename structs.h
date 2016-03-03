@@ -34,9 +34,6 @@ typedef struct {
     int atnofdop;
     double dopc;
     int atn2sub;
-    char ch2atnesymb[2];
-    int ch2atn;
-    int chatn;
     char *parfile;
     char *infile;
     char *outfile;
